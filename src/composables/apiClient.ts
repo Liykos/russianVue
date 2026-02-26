@@ -1,6 +1,24 @@
 import axios, { AxiosHeaders } from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
+const normalizeApiBaseUrl = (rawBaseUrl: string) => {
+  const raw = rawBaseUrl.trim()
+  if (!raw) return '/api'
+
+  const cleaned = raw.replace(/\/+$/, '')
+  const pointsToLocalBackend = /^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/i.test(cleaned)
+
+  if (typeof window !== 'undefined') {
+    const currentHost = window.location.hostname
+    const isLocalVisit = currentHost === '127.0.0.1' || currentHost === 'localhost'
+    if (pointsToLocalBackend && !isLocalVisit) {
+      return '/api'
+    }
+  }
+
+  return cleaned
+}
+
+const API_BASE_URL = normalizeApiBaseUrl(import.meta.env.VITE_API_BASE_URL || '/api')
 const TOKEN_KEY = 'russian_app_token'
 
 let accessToken: string | null = null
