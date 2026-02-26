@@ -140,20 +140,33 @@ watch(() => route.params.id, loadDetail)
 }
 .title-row h2 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: clamp(1.9rem, 8vw, 2.2rem);
+  line-height: 1.15;
 }
 .tag {
   border-radius: 999px;
   padding: 5px 11px;
-  font-size: 0.86rem;
+  font-size: var(--fs-caption);
 }
 .tag.new { background: #e2efff; color: #2a5f9c; }
 .tag.forgotten { background: #ffe4e0; color: #ad3b31; }
 .tag.review { background: #e4f6e8; color: #2c7a47; }
-.subtitle { color: #697684; margin-top: 6px; }
+.subtitle {
+  color: #697684;
+  margin-top: 6px;
+  font-size: var(--fs-body);
+}
 .section { margin-top: 16px; }
-.label { font-size: 0.85rem; color: #778392; margin-bottom: 6px; }
-.value { font-size: 1rem; color: #24303b; }
+.label {
+  font-size: var(--fs-caption);
+  color: #778392;
+  margin-bottom: 6px;
+}
+
+.value {
+  font-size: var(--fs-body);
+  color: #24303b;
+}
 .mini-btn {
   margin-top: 8px;
   border: none;
@@ -175,4 +188,25 @@ watch(() => route.params.id, loadDetail)
 }
 .error-message { color: #c5372d; margin-top: 12px; }
 .success-message { color: #2f8550; margin-top: 12px; }
+
+@media (max-width: 760px) {
+  .top-actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .top-actions button {
+    width: 100%;
+  }
+
+  .card {
+    padding: 18px 14px;
+  }
+
+  .title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 </style>

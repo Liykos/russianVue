@@ -20,7 +20,7 @@ const handleLogout = async () => {
 
 <template>
   <nav class="navigation-bar">
-    <div class="logo" @click="navigate('/review')">SRS 俄语学习</div>
+    <div class="logo" @click="navigate('/review')">SRS 俄语单词 for Kaya 💖</div>
     <div class="nav-links">
       <button 
         @click="navigate('/review')" 
@@ -66,7 +66,7 @@ const handleLogout = async () => {
   z-index: 1000;
 }
 .logo {
-  font-size: 1.5em;
+  font-size: clamp(1.16rem, 4.3vw, 1.38rem);
   font-weight: 700;
   color: #007aff;
   cursor: pointer; /* 增加点击效果，点击 logo 回主页 */
@@ -75,7 +75,7 @@ const handleLogout = async () => {
   background: none;
   border: none;
   color: #333;
-  font-size: 1em;
+  font-size: clamp(0.9rem, 2.8vw, 0.97rem);
   padding: 8px 11px;
   cursor: pointer;
   border-radius: 6px;

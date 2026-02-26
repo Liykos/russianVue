@@ -34,7 +34,7 @@ onMounted(loadWords)
   <div class="page-container">
     <div class="top-row">
       <div>
-        <h2>🧠 我的遗忘词</h2>
+        <h2>我的遗忘词</h2>
         <p class="subtitle">这里保存你历史上点过“不会”或手动加入遗忘的单词。</p>
       </div>
       <button class="back-btn" @click="router.push('/review')">返回复习中心</button>
@@ -73,6 +73,7 @@ onMounted(loadWords)
 .subtitle {
   color: #62707e;
   margin-bottom: 12px;
+  font-size: var(--fs-body);
 }
 .back-btn {
   border: none;
@@ -89,6 +90,7 @@ onMounted(loadWords)
   border-radius: 12px;
   border: 1px solid #d6dfe9;
   box-sizing: border-box;
+  font-size: var(--fs-body);
 }
 .list {
   margin-top: 14px;
@@ -114,21 +116,35 @@ onMounted(loadWords)
   background: #ffeae6;
   border-radius: 999px;
   padding: 4px 9px;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
 }
-.row-bottom { margin-top: 6px; color: #42505f; }
+.row-bottom {
+  margin-top: 6px;
+  color: #42505f;
+  font-size: var(--fs-body);
+}
 .card {
   margin-top: 14px;
   padding: 18px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.84);
+  font-size: var(--fs-body);
 }
 .error-message { color: #c5372d; margin-top: 12px; }
+
+.top-row h2 {
+  margin: 0;
+  font-size: var(--fs-display);
+}
 
 @media (max-width: 760px) {
   .top-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .back-btn {
+    width: 100%;
   }
 }
 </style>

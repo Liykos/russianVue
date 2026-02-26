@@ -125,12 +125,13 @@ onMounted(loadWords)
 
 .header-row h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: var(--fs-display);
 }
 
 .header-row p {
   margin: 6px 0 0;
   color: #5f7187;
+  font-size: var(--fs-body);
 }
 
 .back-btn {
@@ -166,7 +167,7 @@ onMounted(loadWords)
   color: #43586e;
   border-radius: 999px;
   padding: 5px 10px;
-  font-size: 0.85rem;
+  font-size: var(--fs-caption);
 }
 
 .filter-card {
@@ -219,7 +220,7 @@ onMounted(loadWords)
 .tag {
   border-radius: 999px;
   padding: 3px 8px;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
 }
 
 .tag.today {
@@ -235,6 +236,7 @@ onMounted(loadWords)
 .row-bottom {
   margin-top: 4px;
   color: #415262;
+  font-size: var(--fs-body);
 }
 
 .status-card {
@@ -250,6 +252,10 @@ onMounted(loadWords)
   .header-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .back-btn {
+    width: 100%;
   }
 }
 </style>

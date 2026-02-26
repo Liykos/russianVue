@@ -77,7 +77,7 @@ onMounted(loadBooks)
   <div class="page-container">
     <div class="top-row">
       <div>
-        <h2>📚 我在学的单词书</h2>
+        <h2>我在学的单词书</h2>
         <p class="subtitle">当前在学：{{ currentBookTitle || '未设置' }}</p>
       </div>
       <button class="back-btn" @click="router.push('/review')">返回复习中心</button>
@@ -143,7 +143,17 @@ onMounted(loadBooks)
   align-items: flex-start;
   gap: 10px;
 }
-.subtitle { color: #5f6975; margin-top: -4px; }
+.top-row h2 {
+  margin: 0;
+  font-size: var(--fs-display);
+}
+
+.subtitle {
+  color: #5f6975;
+  margin-top: 6px;
+  font-size: var(--fs-body);
+}
+
 .layout { display: grid; grid-template-columns: 320px 1fr; gap: 18px; }
 .book-list, .book-detail {
   background: rgba(255, 255, 255, 0.84);
@@ -168,16 +178,52 @@ onMounted(loadBooks)
   align-items: center;
   gap: 6px;
 }
-.book-title { font-weight: 700; }
+.book-title {
+  font-weight: 700;
+  font-size: var(--fs-body);
+}
 .current-tag {
   background: #ddf5e4;
   color: #2d7d47;
   border-radius: 999px;
   padding: 3px 8px;
-  font-size: 0.78rem;
+  font-size: var(--fs-caption);
 }
-.book-meta { color: #6a7480; font-size: 0.9rem; margin-top: 4px; }
-.meta { color: #6a7480; }
+.book-meta {
+  color: #6a7480;
+  font-size: var(--fs-caption);
+  margin-top: 4px;
+}
+
+.book-detail h3 {
+  margin: 0;
+  font-size: var(--fs-title);
+}
+
+.book-detail p {
+  font-size: var(--fs-body);
+}
+
+.book-detail h4 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: var(--fs-section);
+}
+
+.book-detail ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.book-detail li {
+  margin-top: 6px;
+  font-size: var(--fs-body);
+}
+
+.meta {
+  color: #6a7480;
+  font-size: var(--fs-caption);
+}
 .import-btn {
   border: none;
   border-radius: 10px;
@@ -224,6 +270,9 @@ onMounted(loadBooks)
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   .top-row { flex-direction: column; align-items: flex-start; }
+  .back-btn {
+    width: 100%;
+  }
   .book-actions {
     flex-direction: column;
     align-items: stretch;

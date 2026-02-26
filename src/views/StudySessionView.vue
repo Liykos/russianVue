@@ -157,12 +157,13 @@ onMounted(loadTodayPlan)
 
 .header-row h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: var(--fs-display);
 }
 
 .header-row p {
   margin: 6px 0 0;
   color: #5f7187;
+  font-size: var(--fs-body);
 }
 
 .header-actions {
@@ -206,7 +207,7 @@ onMounted(loadTodayPlan)
   display: flex;
   justify-content: space-between;
   color: #465a70;
-  font-size: 0.9rem;
+  font-size: var(--fs-caption);
 }
 
 .meter-track {
@@ -236,7 +237,7 @@ onMounted(loadTodayPlan)
   color: #43586e;
   border-radius: 999px;
   padding: 4px 9px;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
 }
 
 .card-top {
@@ -249,7 +250,7 @@ onMounted(loadTodayPlan)
 .book-chip {
   border-radius: 999px;
   padding: 4px 9px;
-  font-size: 0.8rem;
+  font-size: var(--fs-caption);
 }
 
 .type-chip {
@@ -264,10 +265,11 @@ onMounted(loadTodayPlan)
 
 .word-text {
   margin-top: 14px;
-  font-size: 3rem;
+  font-size: clamp(2.1rem, 9vw, 3rem);
   font-weight: 900;
   text-align: center;
   cursor: pointer;
+  line-height: 1.15;
 }
 
 .pronounce-row {
@@ -277,6 +279,7 @@ onMounted(loadTodayPlan)
   align-items: center;
   gap: 10px;
   color: #4f6175;
+  font-size: var(--fs-body);
 }
 
 .audio-btn {
@@ -288,6 +291,7 @@ onMounted(loadTodayPlan)
   margin-top: 10px;
   color: #5f6f81;
   text-align: center;
+  font-size: var(--fs-caption);
 }
 
 .action-buttons {
@@ -303,6 +307,7 @@ onMounted(loadTodayPlan)
   height: 50px;
   font-weight: 800;
   cursor: pointer;
+  font-size: var(--fs-body);
 }
 
 .again {
@@ -321,6 +326,12 @@ onMounted(loadTodayPlan)
 
 .status-card h3 {
   margin-top: 0;
+  font-size: var(--fs-title);
+}
+
+.status-card p,
+.status-card {
+  font-size: var(--fs-body);
 }
 
 .error-message {
@@ -335,7 +346,26 @@ onMounted(loadTodayPlan)
   }
 
   .word-text {
-    font-size: 2.35rem;
+    font-size: clamp(1.9rem, 10vw, 2.35rem);
+  }
+
+  .header-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-actions button {
+    width: 100%;
+  }
+
+  .pronounce-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
   }
 }
 </style>

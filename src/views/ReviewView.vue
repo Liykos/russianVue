@@ -152,12 +152,13 @@ onMounted(loadTodayPlan)
 
 .page-header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: var(--fs-display);
 }
 
 .page-header p {
   margin: 6px 0 0;
   color: #5d7088;
+  font-size: var(--fs-body);
 }
 
 .search-card,
@@ -173,7 +174,7 @@ onMounted(loadTodayPlan)
 }
 
 .section-title {
-  font-size: 1.04rem;
+  font-size: var(--fs-section);
   font-weight: 800;
   color: #22374d;
   margin-bottom: 10px;
@@ -234,7 +235,7 @@ onMounted(loadTodayPlan)
 }
 
 .item-meta {
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
   color: #6b7b8d;
 }
 
@@ -251,13 +252,13 @@ onMounted(loadTodayPlan)
 }
 
 .hero-label {
-  font-size: 0.86rem;
+  font-size: var(--fs-caption);
   color: #64788e;
 }
 
 .hero-book {
   margin-top: 4px;
-  font-size: 1.34rem;
+  font-size: var(--fs-title);
   font-weight: 800;
   color: #1e3550;
 }
@@ -300,7 +301,7 @@ onMounted(loadTodayPlan)
   color: #43586e;
   border-radius: 999px;
   padding: 4px 9px;
-  font-size: 0.82rem;
+  font-size: var(--fs-caption);
 }
 
 .actions-card {
@@ -311,7 +312,7 @@ onMounted(loadTodayPlan)
 
 .action-main {
   height: 54px;
-  font-size: 1rem;
+  font-size: var(--fs-body);
 }
 
 .action-sub {
@@ -342,6 +343,7 @@ onMounted(loadTodayPlan)
 .preview-item small {
   margin-top: 4px;
   color: #6d7a87;
+  font-size: var(--fs-caption);
 }
 
 .status {
